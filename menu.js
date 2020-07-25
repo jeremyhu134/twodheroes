@@ -60,7 +60,7 @@ class MenuScene extends Phaser.Scene {
             gameState.stats = gameState.acreeStats;
 		});
         
-        var rando = Math.ceil(Math.random()* 5);
+        var rando = Math.ceil(Math.random()* 6);
         console.log(rando);
         if(rando === 1){
             gameState.enemyhero = 'ballmech';
@@ -81,6 +81,10 @@ class MenuScene extends Phaser.Scene {
         else if(rando === 5){
             gameState.enemyhero = 'zaro';
             gameState.enemyherostats = gameState.zaroStats;
+        }
+        else if(rando === 6){
+            gameState.enemyhero = 'acree';
+            gameState.enemyherostats = gameState.acreeStats;
         }
         gameState.enemyhealth = gameState.enemyherostats.health;
         gameState.enemyammo = gameState.enemyherostats.ammo;

@@ -445,6 +445,12 @@ class ArenaScene extends Phaser.Scene {
                     gameState.enemycurrentability1cooldown = gameState.enemyability1cooldown;
                 }
             }
+            else if(gameState.hero === 'acree' && gameState.enemycurrentability1cooldown){
+               gameState.ability1ammo = this.physics.add.sprite(gameState.enemyheroimage.x,gameState.enemyheroimage.y,`${gameState.enemyhero}ability1ammo`).setGravityY(-1000);
+                gameState.enemycurrentability1cooldown = gameState.enemyability1cooldown;
+                this.physics.moveTo(gameState.ability1ammo, gameState.heroimage.x,gameState.heroimage.y, 600); gameState.angle4=Phaser.Math.Angle.Between(gameState.ability1ammo.x,gameState.ability1ammo.y,gameState.heroimage.x,gameState.heroimage.y);
+                gameState.ability1ammo.setRotation(gameState.angle4);
+            }
         }
         if(gameState.enemycurrenthealth <= 0){
             gameState.health1 = this.add.image(1155,100,'healthbar').setOrigin(0,0);
